@@ -22,7 +22,7 @@ jobs:
           /usr/lib/postgresql/16/bin/pg_dump "$DATABASE_URL" --no-owner --format=custom \
             | gzip -9 | age -r "$BACKUP_AGE_RECIPIENT" > "reckon-$stamp.dump.gz.age"
           ls -lh reckon-*.age
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: reckon-db-backup
           path: reckon-*.age

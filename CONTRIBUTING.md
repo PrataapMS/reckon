@@ -24,10 +24,11 @@
 
 ## Workflow
 
-- Branch from `dev`; open PRs into `dev`. Merge `dev` → `main` about weekly (production deploys cost Netlify credits).
-- Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`).
+- Branch from `dev`; open PRs into `dev`.
+- Small, focused commits with a short subject and a one-line body.
+- Production deploys run only on a major version tag (`vN.0.0`) and need approval.
 - Run `pnpm verify` before pushing; CI runs the same plus integration tests.
 
 ## Definition of Done
 
-Code, tests, docs updated; accessible (keyboard, contrast, reduced motion); observable (logs and `job_runs` stats); deployed to a preview; the phase's acceptance criteria still pass.
+Code, tests, docs updated; accessible (keyboard, contrast, reduced motion); observable (logs and `job_runs` stats); the phase's acceptance criteria still pass.

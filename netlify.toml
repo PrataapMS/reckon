@@ -2,6 +2,8 @@
 [build]
   command = "pnpm --filter @reckon/web build"
   publish = "apps/web/dist"
+  # Never build from Git pushes; production deploys run from .github/workflows/deploy.yml.
+  ignore = "exit 0"
 
 [build.environment]
   NODE_VERSION = "24"

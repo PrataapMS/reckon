@@ -281,7 +281,7 @@ Reckon is single-user and self-hosted: your data lives in your own database.
 
 Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) for the architecture rules and workflow. Adding a new data source is the most common change and needs one adapter, one template and no changes to core code.
 
-Please use [Conventional Commits](https://www.conventionalcommits.org/) and run `pnpm verify` before opening a pull request.
+Please keep commits small with short messages, and run `pnpm verify` before opening a pull request.
 
 ## Data sources and attribution
 

@@ -87,13 +87,14 @@ pnpm test:e2e             # onboarding → brief → reveal, World pulse, scoreb
 
 **GitHub**
 1. Push the repo (create `main` and `dev` branches).
-2. Add repository secrets: `DATABASE_URL` (Neon), `CONTACT_EMAIL`, `BACKUP_AGE_RECIPIENT` (from `age-keygen`; keep the private key offline).
+2. Add repository secrets: `DATABASE_URL` (Neon), `CONTACT_EMAIL`, `BACKUP_AGE_RECIPIENT` (from `age-keygen`; keep the private key offline), `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
+3. Create a `production` environment with yourself as a required reviewer.
 
 **Netlify**
 1. "Add new site" → import the GitHub repo. `netlify.toml` already sets the build command, publish folder and functions folder.
 2. Site settings → Environment variables: `DATABASE_URL`, `SESSION_SECRET`, `PASSPHRASE_HASH`, `DEFAULT_LAT`, `DEFAULT_LON`, `DEFAULT_TZ`, `CONTACT_EMAIL`, and for Telegram `TELEGRAM_BOT_TOKEN`, `TELEGRAM_BOT_USERNAME`, `TELEGRAM_WEBHOOK_SECRET`. Evidence goes to Netlify Blobs automatically; `APP_URL` defaults to Netlify's `URL`. Optional: `GITHUB_TOKEN` (a token with no scopes; lifts GitHub's 60 requests/hour limit) and, for Web Push, `VAPID_PUBLIC_KEY` and `VAPID_PRIVATE_KEY` from `pnpm push:keys`.
    After pulling Phase 2, run `DATABASE_URL="<neon url>" pnpm db:migrate && DATABASE_URL="<neon url>" pnpm db:seed` again (migration `0002_phase2.sql` adds topics, headlines and push subscriptions).
-3. Deploy. Then open `https://<site>.netlify.app/api/v1/health`.
+3. Deploy: push a major version tag (`git tag v1.0.0 && git push origin v1.0.0`) and approve the run. Netlify never builds from Git pushes (`ignore` in `netlify.toml`). Then open `https://<site>.netlify.app/api/v1/health`.
 4. Functions → `tick` → "Run now" once; `/health` should list a `tick` with status `ok`. That is Phase 0's acceptance check.
 
 **Telegram (optional, about 5 minutes)**
@@ -110,7 +111,7 @@ pnpm test:e2e             # onboarding → brief → reveal, World pulse, scoreb
 
 **Phase 2 acceptance (after deploying):** `/api/v1/health` also lists `news` runs with status `ok`; within a few weeks the Scoreboard shows 100+ resolved questions, at least half of the world and tech questions show headlines under "Why we believe this", and any failed nightly contract run has an open GitHub issue.
 
-**Working agreement:** develop on `dev` (branch deploys are free); merge to `main` about once a week, because each production deploy costs 15 of the 300 monthly free credits.
+**Working agreement:** production deploys only happen on a major version tag, after approval, because each one costs 15 of the 300 monthly free credits.
 
 ## 4. What to build next
 

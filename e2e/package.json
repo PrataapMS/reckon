@@ -9,7 +9,7 @@
     "screenshots": "playwright test --config playwright.screenshots.config.ts"
   },
   "dependencies": {
-    "@hono/node-server": "^2.1.0",
+    "@hono/node-server": "^2.1.6",
     "@reckon/adapters": "workspace:*",
     "@reckon/api": "workspace:*",
     "@reckon/jobs": "workspace:*",

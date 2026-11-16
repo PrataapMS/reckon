@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.0",
-    "@types/node": "^24.0.0",
+    "@types/node": "^26.6.6",
     "dependency-cruiser": "^18.5.0",
     "esbuild": "^0.28.0",
     "fast-check": "^4.10.0",

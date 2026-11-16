@@ -13,11 +13,11 @@
     "hash-passphrase": "tsx src/hash-passphrase.ts"
   },
   "dependencies": {
-    "@hono/node-server": "^2.1.0",
+    "@hono/node-server": "^2.1.8",
     "@reckon/contracts": "workspace:*",
     "@reckon/core": "workspace:*",
     "@reckon/runtime": "workspace:*",
-    "hono": "^4.13.0"
+    "hono": "^4.13.18"
   },
   "devDependencies": {
     "@reckon/adapters": "workspace:^"

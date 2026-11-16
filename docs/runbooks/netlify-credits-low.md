@@ -7,4 +7,4 @@ Netlify emails at 50%, 75% and 100% of the monthly allowance. On the Free plan, 
    - **Compute:** check `job_runs` durations (`select job, avg(finished_at - started_at) from job_runs group by job`). A job taking much longer than ~5 s usually means a slow source; lower its batch size.
    - **Bandwidth:** confirm the service worker is caching assets (`dist/sw.js` deployed).
 2. If a pause happens anyway, nothing is lost: resolvers backfill when the site resumes.
-3. If this recurs, upgrade to Netlify Personal ($9/month, 1,000 credits) or follow ADR-0003's Cloudflare fallback.
+3. If this recurs, upgrade to Netlify Personal ($9/month, 1,000 credits) or move hosting to Cloudflare.

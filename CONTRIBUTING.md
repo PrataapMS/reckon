@@ -2,9 +2,8 @@
 
 ## Before you write code
 
-1. Read [docs/spec/00-index.md](docs/spec/00-index.md) and the section for the area you are touching.
-2. Pick the first unticked task in your phase in [docs/spec/06-roadmap.md](docs/spec/06-roadmap.md).
-3. If your change departs from the spec, write an ADR in `docs/adr` first (copy an existing one).
+1. Check [docs/ROADMAP.md](docs/ROADMAP.md) and the open issues for what is planned.
+2. For anything beyond a small fix, open an issue first to agree the approach.
 
 ## Architecture rules (enforced by `pnpm depcruise`)
 

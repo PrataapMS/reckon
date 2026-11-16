@@ -9,3 +9,8 @@ coverage
 .data
 test-results
 playwright-report
+
+# Local-only: plans, specs and decision records
+docs/spec/
+docs/adr/
+CLAUDE.md

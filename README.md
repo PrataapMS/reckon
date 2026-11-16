@@ -18,7 +18,7 @@ checks every one against a public data source, and shows you exactly how trustwo
 [![Node 24](https://img.shields.io/badge/node-24-339933?logo=node.js&logoColor=white)](.nvmrc)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](tsconfig.json)
 [![PWA](https://img.shields.io/badge/PWA-installable-5A0FC8?logo=pwa&logoColor=white)](apps/web)
-[![Hosting cost](https://img.shields.io/badge/hosting-%240%2Fmonth-10B981)](docs/spec/05-operations.md)
+[![Hosting cost](https://img.shields.io/badge/hosting-%240%2Fmonth-10B981)](docs/GETTING_STARTED.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-EC4899.svg)](CONTRIBUTING.md)
 
 [Features](#features) · [Screenshots](#screenshots) · [How it works](#how-it-works) · [Get started](#get-started) · [Roadmap](#roadmap) · [Contributing](#contributing)
@@ -204,7 +204,7 @@ See [.env.example](.env.example) for every option.
 - [ ] **Phase 5: Life integration.** Opt-in Todoist and Google Calendar questions, scored in their own bucket.
 - [ ] **Phase 6: Decisions.** Action cards only from question types with proven skill, each with its justifying record.
 
-Details and acceptance criteria: [docs/spec/06-roadmap.md](docs/spec/06-roadmap.md).
+More detail: [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Tech stack
 
@@ -226,8 +226,6 @@ Details and acceptance criteria: [docs/spec/06-roadmap.md](docs/spec/06-roadmap.
 - **Validated at the edge.** All external data enters through Zod; expected failures are `Result<T, E>`, not exceptions.
 - **Tested at every layer.** Unit and property tests, Postgres integration tests for the ledger rules, nightly live contract tests against every data source, and Playwright E2E with axe-core in both themes.
 
-Architecture decisions are recorded in [docs/adr](docs/adr); the full product and engineering spec is in [docs/spec](docs/spec/00-index.md).
-
 <details>
 <summary><b>Repository map</b></summary>
 
@@ -246,8 +244,7 @@ packages/
   runtime/      Config, logger, composition root
 e2e/            Playwright tests and README screenshots on a fake clock
 docs/
-  spec/         Product and engineering spec
-  adr/          Architecture decision records
+  ROADMAP.md    Public roadmap
   runbooks/     What to do when something breaks
 ```
 

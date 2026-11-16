@@ -14,7 +14,7 @@
     "@reckon/api": "workspace:*",
     "@reckon/jobs": "workspace:*",
     "@reckon/runtime": "workspace:*",
-    "hono": "^4.13.0"
+    "hono": "^4.13.16"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

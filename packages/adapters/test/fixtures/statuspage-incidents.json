@@ -1,0 +1,87 @@
+{
+  "page": {
+    "id": "kctbh9vrtdwd",
+    "name": "GitHub",
+    "url": "https://www.githubstatus.com",
+    "time_zone": "Etc/UTC",
+    "updated_at": "2026-10-05T17:49:19.957Z"
+  },
+  "incidents": [
+    {
+      "id": "2dpbcq5j165n",
+      "name": "Actions Job Delays",
+      "status": "resolved",
+      "created_at": "2026-10-01T14:47:48.138Z",
+      "updated_at": "2026-10-01T17:56:54.289Z",
+      "monitoring_at": "2026-10-01T15:10:52.227Z",
+      "resolved_at": "2026-10-01T17:56:54.260Z",
+      "impact": "minor",
+      "shortlink": "https://stspg.io/kdqxfjn5qg6q",
+      "started_at": "2026-10-01T14:47:48.132Z",
+      "page_id": "kctbh9vrtdwd",
+      "components": [
+        {
+          "id": "br0l2tvcx85d",
+          "name": "Actions",
+          "status": "operational",
+          "created_at": "2019-11-13T18:02:19.432Z",
+          "updated_at": "2026-10-01T17:56:54.207Z",
+          "position": 7,
+          "description": "Workflows, Compute and Orchestration for GitHub Actions",
+          "showcase": true,
+          "start_date": null,
+          "group_id": null,
+          "page_id": "kctbh9vrtdwd",
+          "group": false,
+          "only_show_if_degraded": false
+        }
+      ],
+      "reminder_intervals": null
+    },
+    {
+      "id": "c8466lzvnmsv",
+      "name": "Elevated request latency",
+      "status": "resolved",
+      "created_at": "2026-10-01T13:37:33.066Z",
+      "updated_at": "2026-10-01T13:57:59.355Z",
+      "monitoring_at": "2026-10-01T13:51:20.147Z",
+      "resolved_at": "2026-10-01T13:57:59.327Z",
+      "impact": "minor",
+      "shortlink": "https://stspg.io/cz0ngh11q0tf",
+      "started_at": "2026-10-01T13:37:33.060Z",
+      "page_id": "kctbh9vrtdwd",
+      "components": [],
+      "reminder_intervals": null
+    },
+    {
+      "id": "dqn46wtvbdzv",
+      "name": "[Retroactive] Actions workflow run failures after deployment gate approvals",
+      "status": "resolved",
+      "created_at": "2026-10-01T02:00:00.000Z",
+      "updated_at": "2026-10-01T11:34:33.960Z",
+      "monitoring_at": null,
+      "resolved_at": "2026-10-01T02:00:00.000Z",
+      "impact": "minor",
+      "shortlink": "https://stspg.io/f0yg8jk2gm80",
+      "started_at": "2026-10-01T11:34:16.856Z",
+      "page_id": "kctbh9vrtdwd",
+      "components": [],
+      "reminder_intervals": null
+    },
+    {
+      "id": "169pg72gg9jr",
+      "name": "Copilot Code Review is unable to complete reviews",
+      "status": "resolved",
+      "created_at": "2026-09-28T21:16:39.012Z",
+      "updated_at": "2026-10-01T16:12:43.172Z",
+      "monitoring_at": null,
+      "resolved_at": "2026-09-28T22:08:20.216Z",
+      "impact": "critical",
+      "shortlink": "https://stspg.io/phqvtmdm3y2m",
+      "started_at": "2026-09-28T21:16:39.006Z",
+      "page_id": "kctbh9vrtdwd",
+      "components": [],
+      "reminder_intervals": null
+    }
+  ]
+}

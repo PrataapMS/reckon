@@ -1,0 +1,43 @@
+{
+  "name": "reckon",
+  "private": true,
+  "description": "Reckon \u2014 Reality keeps score. A closed-loop personal forecasting app.",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=24"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:api": "pnpm --filter @reckon/api dev",
+    "dev:web": "pnpm --filter @reckon/web dev",
+    "build": "turbo run build",
+    "test": "vitest run --project unit",
+    "test:watch": "vitest",
+    "test:integration": "vitest run --project integration",
+    "test:contracts": "RECKON_LIVE=1 vitest run --project contracts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && pnpm --filter @reckon/web typecheck && tsc -p e2e/tsconfig.json --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "depcruise": "depcruise packages apps netlify --config .dependency-cruiser.cjs",
+    "db:up": "docker compose up -d db",
+    "db:migrate": "tsx packages/db/scripts/migrate.ts",
+    "db:seed": "tsx packages/db/scripts/seed.ts",
+    "verify": "pnpm lint && pnpm typecheck && pnpm depcruise && pnpm test && pnpm build",
+    "telegram:webhook": "tsx packages/runtime/scripts/set-telegram-webhook.ts",
+    "push:keys": "tsx packages/runtime/scripts/vapid-keys.ts",
+    "test:e2e": "pnpm --filter @reckon/e2e test",
+    "job": "tsx --env-file-if-exists=.env apps/jobs/src/cli.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "@types/node": "^24.0.0",
+    "dependency-cruiser": "^18.5.0",
+    "esbuild": "^0.28.0",
+    "fast-check": "^4.10.0",
+    "tsx": "^4.23.0",
+    "turbo": "^2.11.0",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.0"
+  }
+}

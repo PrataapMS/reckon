@@ -1,0 +1,28 @@
+# Netlify builds the PWA and bundles every file in netlify/functions.
+[build]
+  command = "pnpm --filter @reckon/web build"
+  publish = "apps/web/dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  PNPM_VERSION = "9.15.9"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  # pg optionally requires a native addon Reckon does not use.
+  external_node_modules = ["pg-native"]
+
+# Single-page app fallback (the API function claims /api/* via its own config.path).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self'; script-src 'self'; frame-ancestors 'none'"

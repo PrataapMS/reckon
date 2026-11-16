@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": { "noEmit": true },
+  "include": [
+    "packages/*/src",
+    "packages/*/scripts",
+    "packages/*/test",
+    "apps/api/src",
+    "apps/api/test",
+    "apps/jobs/src",
+    "apps/jobs/test",
+    "netlify/functions",
+    "vitest.config.ts"
+  ]
+}

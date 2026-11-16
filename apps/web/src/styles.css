@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Design tokens from spec 04-design. Dark-first; the light theme follows the OS setting. */
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Colour tokens live on :root, not in @theme: components read them with var(), and Tailwind only
+ * emits @theme variables that a utility uses (in dev, lazily), which left dark text unset.
+ */
+:root {
+  --color-bg: #0b0d17;
+  --color-surface: #151829;
+  --color-line: #252a45;
+  --color-text: #f2f3fa;
+  --color-muted: #a3a7c2;
+  --color-hit: #4ade80;
+  --color-miss: #f87171;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f7f7fb;
+    --color-surface: #ffffff;
+    --color-line: #e3e4ef;
+    --color-text: #14162b;
+    --color-muted: #5b5f7a;
+    --color-hit: #15803d; /* green-700: 5:1 on white (spec green #16A34A is 3.3:1, below AA) */
+    --color-miss: #dc2626;
+  }
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must override every component animation */
+    animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must override every component transition */
+    transition-duration: 0.01ms !important;
+  }
+}

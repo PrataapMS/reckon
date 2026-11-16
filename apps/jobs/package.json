@@ -1,0 +1,18 @@
+{
+  "name": "@reckon/jobs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@reckon/core": "workspace:*",
+    "@reckon/runtime": "workspace:*"
+  },
+  "devDependencies": {
+    "@reckon/adapters": "workspace:^",
+    "@types/pg": "^8.11.0",
+    "pg": "^8.13.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "query_details": { "title": "\"monsoon\" sourcecountry:india", "date_resolution": "hour" },
+  "timeline": [
+    {
+      "series": "Article Count",
+      "data": [
+        { "date": "20261001T000000Z", "value": 12, "norm": 21843 },
+        { "date": "20261001T010000Z", "value": 7, "norm": 20511 },
+        { "date": "20261001T230000Z", "value": 5, "norm": 19004 },
+        { "date": "20261003T000000Z", "value": 0, "norm": 22410 },
+        { "date": "20261003T120000Z", "value": 30, "norm": 25877 },
+        { "date": "20261003T130000Z", "value": 4, "norm": 24312 },
+        { "date": "20261004T060000Z", "value": 9, "norm": 23998 },
+        { "date": "20261005T000000Z", "value": 99, "norm": 24120 }
+      ]
+    }
+  ]
+}

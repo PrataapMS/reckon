@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><feed
+	xmlns="http://www.w3.org/2005/Atom"
+	xmlns:thr="http://purl.org/syndication/thread/1.0"
+	xml:lang="en-US"
+	>
+	<title type="text">The Verge</title>
+	<subtitle type="text">The Verge is about technology and how it makes us feel. Founded in 2011, we offer our audience everything from breaking news to reviews to award-winning features and investigations, on our site, in video, and in podcasts.</subtitle>
+
+	<updated>2026-10-05T17:54:27+00:00</updated>
+
+	<link rel="alternate" type="text/html" href="https://www.theverge.com" />
+	<id>https://www.theverge.com/rss/index.xml</id>
+	<link rel="self" type="application/atom+xml" href="https://www.theverge.com/rss/index.xml" />
+
+	<icon>https://platform.theverge.com/wp-content/uploads/sites/2/2025/01/verge-rss-large_80b47e.png?w=150&amp;h=150&amp;crop=1</icon>
+		<entry>
+			
+			<author>
+				<name>Emma Roth</name>
+			</author>
+			
+			<title type="html"><![CDATA[OpenAI PR tells journalist to ‘move on’ while asking Sam Altman about a ChatGPT user&#8217;s suicide]]></title>
+			<link rel="alternate" type="text/html" href="https://www.theverge.com/ai-artificial-intelligence/1004827/openai-sam-altman-vanity-fair-interview-pr" />
+			<id>https://www.theverge.com/?p=1004827</id>
+			<updated>2026-10-05T13:32:59-04:00</updated>
+			<published>2026-10-05T12:55:42-04:00</published>
+			<category scheme="https://www.theverge.com" term="AI" /><category scheme="https://www.theverge.com" term="News" /><category scheme="https://www.theverge.com" term="OpenAI" /><category scheme="https://www.theverge.com" term="Policy" />
+							<summary type="html"><![CDATA[An OpenAI publicist tried to change the topic of CEO Sam Altman's interview with Vanity Fair's Mark Guiducci after the editor brought up a ChatGPT user's suicide. When Guiducci confronted Altman about the incident, the publicist warned Guiducci about running out of time, saying she'd like to "move on" to another topic. The interruption came [&#8230;]]]></summary>
+			
+							<content type="html">
+											<![CDATA[
+
+						
+<figure>
+
+<img alt="" data-caption="" data-portal-copyright="Image: The Verge" data-has-syndication-rights="1" src="https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STK201_SAM_ALTMAN_CVIRGINIA_C.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100" />
+	<figcaption>
+		</figcaption>
+</figure>
+<p class="wp-block-paragraph">An OpenAI publicist tried to change the topic of CEO <a href="https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1?">Sam Altman's interview with <em>Vanity Fair</em>'s Mark Guiducci</a> after the editor brought up a ChatGPT user's suicide. When Guiducci confronted Altman about the incident, the publicist warned Guiducci about running out of time, saying she'd like to "move on" to another topic.</p>
+<p class="wp-block-paragraph">The interruption came shortly after Guiducci asked Altman if he knew who Laura Reiley is, a journalist who <a href="https://www.nytimes.com/2025/08/18/opinion/chat-gpt-mental-health-suicide.html">wrote an essay for <em>The New York Times</em></a> about her daughter's conversations with ChatGPT before she took her own life. "Her daughter committed suicide after speaking to ChatGPT. ChatGPT did not tell her to kill herself-" Gu …</p>
+<p><a href="https://www.theverge.com/ai-artificial-intelligence/1004827/openai-sam-altman-vanity-fair-interview-pr">Read the full story at The Verge.</a></p>
+						]]>
+									</content>
+			
+					</entry>
+			<entry>
+			
+			<author>
+				<name>Robert Hart</name>
+			</author>
+			
+			<title type="html"><![CDATA[Sam Altman says ‘some bad things&#8217; will happen, but AI is totally worth it]]></title>
+			<link rel="alternate" type="text/html" href="https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff" />
+			<id>https://www.theverge.com/?p=1004811</id>
+			<updated>2026-10-05T13:54:27-04:00</updated>
+			<published>2026-10-05T12:44:21-04:00</published>
+			<category scheme="https://www.theverge.com" term="AI" /><category scheme="https://www.theverge.com" term="News" /><category scheme="https://www.theverge.com" term="OpenAI" /><category scheme="https://www.theverge.com" term="Policy" />
+							<summary type="html"><![CDATA[Sam Altman thinks that the benefits of AI will be so great that "the world should accept some bad things happening" along the way. The OpenAI CEO pointed to hacks, scams, and "other bad things" as costs society should expect to tolerate because "people will do tremendously orders of magnitude more good stuff" with AI, [&#8230;]]]></summary>
+			
+							<content type="html">
+											<![CDATA[
+
+						
+<figure>
+
+<img alt="" data-caption="" data-portal-copyright="Photo: Getty Images" data-has-syndication-rights="1" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/gettyimages-2294958253.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100" />
+	<figcaption>
+		</figcaption>
+</figure>
+<p class="wp-block-paragraph">Sam Altman thinks that the benefits of AI will be so great that "the world should accept some bad things happening" along the way.</p>
+<p class="wp-block-paragraph">The OpenAI CEO pointed to hacks, scams, and "other bad things" as costs society should expect to tolerate because "people will do tremendously orders of magnitude more good stuff" with AI, without elaborating on the potential benefits. His comments come as OpenAI pushes for a "lighter touch" approach to AI regulation amid <a href="https://www.theverge.com/ai-artificial-intelligence/972380/open-ai-hugging-face-hack-ai-safety-warning">intensifying anxiety over the safety of frontier models</a> - fears fueled in part by the company's repeated failures to keep its increasingly capable AI agents from hacking real-world targets. </p>
+<p class="wp-block-paragraph">I …</p>
+<p><a href="https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff">Read the full story at The Verge.</a></p>
+						]]>
+									</content>
+			
+					</entry>
+			<entry>
+			
+			<author>
+				<name>Andrew Liszewski</name>
+			</author>
+			
+			<title type="html"><![CDATA[Nvidia’s Shield TV Pro just got a $100 price hike]]></title>
+			<link rel="alternate" type="text/html" href="https://www.theverge.com/tech/1004791/nvidia-shield-tv-pro-streaming-box-price-increase" />
+			<id>https://www.theverge.com/?p=1004791</id>
+			<updated>2026-10-05T11:43:13-04:00</updated>
+			<published>2026-10-05T11:43:13-04:00</published>
+			<category scheme="https://www.theverge.com" term="Gadgets" /><category scheme="https://www.theverge.com" term="News" /><category scheme="https://www.theverge.com" term="Nvidia" /><category scheme="https://www.theverge.com" term="Tech" />
+							<summary type="html"><![CDATA[Nvidia's Shield TV streaming boxes are the latest victims of the memory shortage that has seen prices increase dramatically for everything from digital cameras to game consoles. When the Shield TV Pro launched nearly seven years ago with an upgraded Tegra X1+ processor, 3GB of RAM, and 16GB of storage, it sold for $199.99. But [&#8230;]]]></summary>
+			
+							<content type="html">
+											<![CDATA[
+
+						
+<figure>
+
+<img alt="The Nvidia Shield TV Pro streaming box with its remote laying on it." data-caption="" data-portal-copyright="Image: Nvidia" data-has-syndication-rights="1" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/shield.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100" />
+	<figcaption>
+		</figcaption>
+</figure>
+<p class="wp-block-paragraph">Nvidia's Shield TV streaming boxes are the latest victims of the <a href="https://www.theverge.com/news/839353/pc-ram-shortage-pricing-spike-news">memory shortage</a> that has seen prices increase dramatically for everything from <a href="https://www.theverge.com/news/760707/fujifilm-price-increase-cameras-tariffs">digital cameras</a> to <a href="https://www.theverge.com/games/902224/sony-ps5-playstation-price-hike">game consoles</a>. When the <a href="https://www.theverge.com/2019/10/28/20935782/nvidia-shield-tv-pro-announced-features-pricing-dolby-vision" data-type="link" data-id="https://www.theverge.com/2019/10/28/20935782/nvidia-shield-tv-pro-announced-features-pricing-dolby-vision">Shield TV Pro launched nearly seven years ago</a> with an upgraded Tegra X1+ processor, 3GB of RAM, and 16GB of storage, it sold for $199.99. But starting on October 2nd Nvidia increased its price by $100 to $299.99 as a result of the increased cost of components, <a href="https://arstechnica.com/gadgets/2026/10/the-7-year-old-nvidia-shield-tv-is-now-100-more-expensive-thanks-to-ai/">according to <em>Ars Technica</em></a>.</p>
+<p class="wp-block-paragraph">When the Pro model was first announced in 2019 Nvidia also debuted an updated entry-level version of the Shield TV with the same processor but 2GB of RAM and 8GB of storage  …</p>
+<p><a href="https://www.theverge.com/tech/1004791/nvidia-shield-tv-pro-streaming-box-price-increase">Read the full story at The Verge.</a></p>
+						]]>
+									</content>
+			
+					</entry>
+</feed>

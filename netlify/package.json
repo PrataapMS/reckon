@@ -1,0 +1,11 @@
+{
+  "name": "@reckon/netlify-functions",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/functions": "^6.0.0",
+    "@reckon/api": "workspace:*",
+    "@reckon/jobs": "workspace:*",
+    "@reckon/runtime": "workspace:*"
+  }
+}

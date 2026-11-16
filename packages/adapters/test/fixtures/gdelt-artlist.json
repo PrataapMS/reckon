@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "url": "https://www.example-news.in/business/rbi-holds-repo-rate-2026-10-05",
+      "url_mobile": "https://m.example-news.in/business/rbi-holds-repo-rate-2026-10-05",
+      "title": "RBI holds repo rate steady as inflation eases",
+      "seendate": "20261005T103000Z",
+      "socialimage": "https://www.example-news.in/images/rbi.jpg",
+      "domain": "example-news.in",
+      "language": "English",
+      "sourcecountry": "India"
+    },
+    {
+      "url": "https://www.example-wire.com/world/monsoon-withdrawal",
+      "url_mobile": "",
+      "title": "Monsoon withdrawal delayed over central India",
+      "seendate": "20261005T081500Z",
+      "socialimage": "",
+      "domain": "example-wire.com",
+      "language": "English",
+      "sourcecountry": "United States"
+    },
+    {
+      "url": "https://www.example-hindi.in/desh/barish",
+      "url_mobile": "",
+      "title": "मानसून की वापसी में देरी",
+      "seendate": "not-a-date",
+      "socialimage": "",
+      "domain": "example-hindi.in",
+      "language": "Hindi",
+      "sourcecountry": "India"
+    }
+  ]
+}

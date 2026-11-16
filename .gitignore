@@ -1,0 +1,11 @@
+node_modules
+dist
+.turbo
+.env
+.netlify
+coverage
+*.log
+.DS_Store
+.data
+test-results
+playwright-report

@@ -1,0 +1,21 @@
+{
+  "name": "@reckon/e2e",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "server": "tsx server.ts",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.0",
+    "@reckon/adapters": "workspace:*",
+    "@reckon/api": "workspace:*",
+    "@reckon/jobs": "workspace:*",
+    "@reckon/runtime": "workspace:*",
+    "hono": "^4.13.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0"
+  }
+}

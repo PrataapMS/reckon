@@ -1,0 +1,35 @@
+name: Source contracts (nightly)
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test:contracts
+        env:
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+          # Read-only use of the workflow token lifts GitHub's 60 requests/hour unauthenticated limit.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Open an issue when a source contract breaks
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: `Source contract failed ${new Date().toISOString().slice(0, 10)}`,
+              body: `A live data-source contract test failed. See ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId} and docs/runbooks/source-schema-changed.md`,
+              labels: ['source-contract'],
+            });

@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@reckon/core": "workspace:^",
-    "drizzle-orm": "^0.45.0",
+    "drizzle-orm": "^0.45.4",
     "pg": "^8.13.0"
   },
   "devDependencies": {

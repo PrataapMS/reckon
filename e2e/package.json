@@ -1,10 +1,12 @@
 {
   "name": "@reckon/e2e",
   "private": true,
+  "license": "AGPL-3.0-or-later",
   "type": "module",
   "scripts": {
     "server": "tsx server.ts",
-    "test": "playwright test"
+    "test": "playwright test",
+    "screenshots": "playwright test --config playwright.screenshots.config.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.0",

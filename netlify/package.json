@@ -1,6 +1,7 @@
 {
   "name": "@reckon/netlify-functions",
   "private": true,
+  "license": "AGPL-3.0-or-later",
   "type": "module",
   "dependencies": {
     "@netlify/functions": "^6.0.0",

@@ -1,7 +1,8 @@
 {
   "name": "reckon",
   "private": true,
-  "description": "Reckon \u2014 Reality keeps score. A closed-loop personal forecasting app.",
+  "description": "Reckon: reality keeps score. A self-hosted personal forecasting app that checks every prediction against public data.",
+  "license": "AGPL-3.0-or-later",
   "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": ">=24"
@@ -39,5 +40,23 @@
     "turbo": "^2.11.0",
     "typescript": "~5.9.3",
     "vitest": "^5.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrataapMS/reckon.git"
+  },
+  "homepage": "https://github.com/PrataapMS/reckon#readme",
+  "bugs": {
+    "url": "https://github.com/PrataapMS/reckon/issues"
+  },
+  "keywords": [
+    "forecasting",
+    "calibration",
+    "brier-score",
+    "weather",
+    "pwa",
+    "self-hosted",
+    "telegram-bot",
+    "probability"
+  ]
 }

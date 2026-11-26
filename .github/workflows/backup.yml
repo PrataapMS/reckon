@@ -6,7 +6,8 @@ on:
 
 jobs:
   backup:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest (26.04) no longer ships postgresql-client-16.
+    runs-on: ubuntu-24.04
     steps:
       - name: Install pg_dump 16 and age
         run: |
@@ -18,6 +19,7 @@ jobs:
           BACKUP_AGE_RECIPIENT: ${{ secrets.BACKUP_AGE_RECIPIENT }}
         run: |
           set -euo pipefail
+          [[ -n "$DATABASE_URL" && -n "$BACKUP_AGE_RECIPIENT" ]] || { echo "::error::Set the DATABASE_URL and BACKUP_AGE_RECIPIENT secrets"; exit 1; }
           stamp=$(date -u +%Y%m%dT%H%M%SZ)
           /usr/lib/postgresql/16/bin/pg_dump "$DATABASE_URL" --no-owner --format=custom \
             | gzip -9 | age -r "$BACKUP_AGE_RECIPIENT" > "reckon-$stamp.dump.gz.age"

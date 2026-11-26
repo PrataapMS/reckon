@@ -1,7 +1,7 @@
 name: Database backup (nightly)
 on:
   schedule:
-    - cron: "30 20 * * *"   # 02:00 IST
+    - cron: "30 20 * * *" # 02:00 IST
   workflow_dispatch:
 
 jobs:

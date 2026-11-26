@@ -8,6 +8,13 @@ updates:
     groups:
       minor-and-patch:
         update-types: [minor, patch]
+    ignore:
+      # Types track the Node 24 runtime (Netlify, engines), not the newest Node.
+      - dependency-name: "@types/node"
+        update-types: [version-update:semver-major]
+      # dependency-cruiser cannot read TypeScript 7.0's API and silently cruises nothing; revisit with 7.1+.
+      - dependency-name: typescript
+        versions: [">=7.0.0 <7.1.0"]
   - package-ecosystem: github-actions
     directory: /
     target-branch: dev

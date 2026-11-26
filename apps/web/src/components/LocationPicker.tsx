@@ -22,7 +22,7 @@ export function LocationPicker({ defaultName, onPick, busy }: { defaultName: str
   const id = useId();
   const search = useQuery({ queryKey: ['geocode', query], queryFn: () => api.geocode(query), enabled: query.trim().length >= 2, staleTime: 86_400_000 });
 
-  const useDevice = async () => {
+  const onUseDevice = async () => {
     try {
       const p = await locateMe();
       onPick({ name: name.trim() || defaultName, lat: p.lat, lon: p.lon, tz: p.tz });
@@ -39,7 +39,7 @@ export function LocationPicker({ defaultName, onPick, busy }: { defaultName: str
         </label>
         <input id={`${id}-name`} className={`${inputClass} mt-1`} value={name} onChange={(e) => setName(e.target.value)} maxLength={40} />
       </div>
-      <Button onClick={useDevice} disabled={busy}>
+      <Button onClick={onUseDevice} disabled={busy}>
         Use my location
       </Button>
       {note && <Muted className="text-sm">{note}</Muted>}

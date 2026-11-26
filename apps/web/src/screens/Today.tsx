@@ -103,7 +103,7 @@ export function TodayPreview({ standalone = false, todayOnly = false }: { standa
   const [note, setNote] = useState<string | null>(null);
   const preview = useQuery({ queryKey: ['preview', place], queryFn: () => api.previewBrief(place), staleTime: 600_000 });
 
-  const useMyLocation = async () => {
+  const onUseMyLocation = async () => {
     try {
       const p = await locateMe();
       savePlace(p);
@@ -118,7 +118,7 @@ export function TodayPreview({ standalone = false, todayOnly = false }: { standa
     <div className="mt-4">
       {standalone && (
         <div className="mb-2 flex flex-wrap items-center gap-3 text-sm">
-          <Button onClick={useMyLocation}>Use my location</Button>
+          <Button onClick={onUseMyLocation}>Use my location</Button>
           {note && <span className="text-[var(--color-muted)]">{note}</span>}
         </div>
       )}

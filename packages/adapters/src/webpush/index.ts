@@ -1,5 +1,5 @@
 import { err, ok, type PushError, type PushPayload, type PushSender, type PushSubscription, type Result } from '@reckon/core';
-import webpush from 'web-push';
+import { generateVAPIDKeys, sendNotification } from 'web-push';
 
 export interface WebPushOptions {
   readonly publicKey: string;
@@ -7,7 +7,7 @@ export interface WebPushOptions {
   /** VAPID contact, 'mailto:you@example.com' or an https URL. */
   readonly subject: string;
   /** Test seam: the library call. */
-  readonly sendImpl?: typeof webpush.sendNotification;
+  readonly sendImpl?: typeof sendNotification;
 }
 
 /** A brief or reveal older than this is not worth delivering, so the push service may drop it. */
@@ -25,9 +25,9 @@ export class WebPushSender implements PushSender {
   }
 
   async send(s: PushSubscription, payload: PushPayload): Promise<Result<void, PushError>> {
-    const sendNotification = this.o.sendImpl ?? webpush.sendNotification;
+    const send = this.o.sendImpl ?? sendNotification;
     try {
-      await sendNotification({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, JSON.stringify(payload), {
+      await send({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, JSON.stringify(payload), {
         vapidDetails: { subject: this.o.subject, publicKey: this.o.publicKey, privateKey: this.o.privateKey },
         TTL: TTL_SECONDS,
         timeout: 8_000,
@@ -43,5 +43,5 @@ export class WebPushSender implements PushSender {
 }
 
 export function generateVapidKeys(): { readonly publicKey: string; readonly privateKey: string } {
-  return webpush.generateVAPIDKeys();
+  return generateVAPIDKeys();
 }

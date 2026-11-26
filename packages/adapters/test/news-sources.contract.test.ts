@@ -1,4 +1,5 @@
-import { describe, expect, it } from 'vitest';
+import type { Result, SourceError } from '@reckon/core';
+import { describe, expect, it, type TestContext } from 'vitest';
 import { GdeltAdapter } from '../src/sources/gdelt';
 import { FeedAdapter } from '../src/sources/rss';
 
@@ -34,18 +35,40 @@ describe.runIf(live)('RSS / Atom feeds live contract', () => {
   }
 });
 
+/** Errors that say GDELT is busy or unreachable, not that its contract changed. */
+const UNAVAILABLE = new Set(['rate_limited', 'timeout', 'network', 'upstream_5xx']);
+const BACKOFF_MS = [15_000, 30_000];
+// Three attempts at up to 12 s each, plus backoff and the politeness gap.
+const GDELT_TEST_TIMEOUT_MS = 120_000;
+
+/**
+ * GDELT throttles shared egress IPs (GitHub runners included) and often times out. Retry with backoff;
+ * if it is still unavailable, skip with the reason instead of failing, so only a real contract change
+ * (schema_changed, not_found) turns the nightly run red. Production source health still tracks outages.
+ */
+async function gdeltOrSkip<T>(ctx: TestContext, call: () => Promise<Result<T, SourceError>>): Promise<Result<T, SourceError>> {
+  let r = await call();
+  for (const wait of BACKOFF_MS) {
+    if (r.ok || !UNAVAILABLE.has(r.error.code)) return r;
+    await new Promise((res) => setTimeout(res, wait));
+    r = await call();
+  }
+  if (!r.ok && UNAVAILABLE.has(r.error.code)) ctx.skip(`GDELT unavailable after ${BACKOFF_MS.length + 1} attempts: ${r.error.code}`);
+  return r;
+}
+
 describe.runIf(live)('GDELT DOC 2.0 live contract', () => {
-  // One instance, so its own politeness gap spaces the two requests.
+  // One instance, so its own politeness gap spaces the requests.
   const gdelt = new GdeltAdapter({ userAgent: ua, minIntervalMs: 6_000 });
 
-  it('timeline still returns daily volume', { timeout: 30_000 }, async () => {
-    const r = await gdelt.dailyVolume({ query: '"climate change"', start: day(-7), end: day(-1) });
+  it('timeline still returns daily volume', { timeout: GDELT_TEST_TIMEOUT_MS }, async (ctx) => {
+    const r = await gdeltOrSkip(ctx, () => gdelt.dailyVolume({ query: '"climate change"', start: day(-7), end: day(-1) }));
     expect(r.ok, r.ok ? '' : JSON.stringify(r.error)).toBe(true);
     if (r.ok) expect(r.value.parsed).toHaveLength(7);
   });
 
-  it('article list still maps to headlines', { timeout: 30_000 }, async () => {
-    const r = await gdelt.articles({ query: '"climate change"', hours: 24, max: 10 });
+  it('article list still maps to headlines', { timeout: GDELT_TEST_TIMEOUT_MS }, async (ctx) => {
+    const r = await gdeltOrSkip(ctx, () => gdelt.articles({ query: '"climate change"', hours: 24, max: 10 }));
     expect(r.ok, r.ok ? '' : JSON.stringify(r.error)).toBe(true);
     if (r.ok) expect(r.value.parsed.length).toBeGreaterThan(0);
   });

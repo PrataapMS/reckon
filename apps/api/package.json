@@ -17,7 +17,7 @@
     "@reckon/contracts": "workspace:*",
     "@reckon/core": "workspace:*",
     "@reckon/runtime": "workspace:*",
-    "hono": "^4.13.19"
+    "hono": "^4.13.21"
   },
   "devDependencies": {
     "@reckon/adapters": "workspace:^"
